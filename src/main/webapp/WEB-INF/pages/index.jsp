@@ -14,12 +14,15 @@
 </head>
 <body>
 spring mvc test;
-<form>
+<form action="/main/login.html" method="get">
 	<table>
 		<tr>
-			<td>跳转测试</td>
+			<td>账号</td>
 			<td>
-				<button></button>
+				<input name="name" type="text"/>
+			</td>
+			<td>
+				<input  type="submit" value="testsubmit" />
 			</td>
 		</tr>
 	</table>

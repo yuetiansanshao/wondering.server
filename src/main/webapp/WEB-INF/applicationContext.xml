@@ -16,11 +16,23 @@
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
-	<mvc:annotation-driven />
-	<context:component-scan base-package="com.tan.*" />
 
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.bbs.wondering">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+
+
+	<mvc:annotation-driven />
+	<!-- HandlerMapping -->
+<!-- 	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/> -->
+	<!-- HandlerAdapter -->
+<!-- 	<bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/> -->
+	<!--BeanNameUrlHandlerMapping：表示将请求的URL和Bean名字映射，如URL为 “上下文/hello”，则Spring配置文件必须有一个名字为“/hello”的Bean，上下文默认忽略。
+		SimpleControllerHandlerAdapter：表示所有实现了org.springframework.web.servlet.mvc.Controller接口的Bean可以作为Spring Web MVC中的处理器。如果需要其他类型的处理器可以通过实现HadlerAdapter来解决。 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/" />
+		<property name="prefix" value="/WEB-INF/pages/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 

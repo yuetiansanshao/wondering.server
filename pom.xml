@@ -8,22 +8,79 @@
   <packaging>war</packaging>
   
   
-  	<dependencies>
-		<!-- Internal Dependencies -->
-		<dependency>
-			<groupId>com.bbs.wondering</groupId>
-			<artifactId>wondering.bbs.base</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+ <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+        <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>4.2.4.RELEASE</version>
+    </dependency>
+     <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-webmvc</artifactId>  
+            <version>4.2.4.RELEASE</version>  
+     </dependency> 
+     <dependency>  
+            <groupId>org.springframework</groupId>  
+            <artifactId>spring-web</artifactId>  
+            <version>4.2.4.RELEASE</version>  
+      </dependency>  
+<!--       <dependency>
+      		<groupId>org.hibernate</groupId>
+      		<artifactId>hibernate-core</artifactId>
+      		<version>4.0.4.RELEASE</version>
+      		<type>jar</type>  
+            <scope>compile</scope>  
+      </dependency> -->
+      <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>4.2.4.RELEASE</version>
+	</dependency>
+<!--       <dependency>
+      		<groupId>org.springframework</groupId>
+      		<artifactId>spring-orm</artifactId>
+      		<version>4.2.4.RELEASE</version>  
+            <type>jar</type>  
+      </dependency> -->
+      <!-- logs -->
+      	<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.1</version>
 		</dependency>
 		<dependency>
-			  <groupId>com.bbs.wondering</groupId>
-			  <artifactId>wondering.bbs</artifactId>
-			  <version>0.0.1-SNAPSHOT</version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>1.6.1</version>
 		</dependency>
-		</dependencies>
-		
-	<build> 
-    
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+		  <groupId>log4j</groupId>
+		  <artifactId>log4j</artifactId>
+		  <version>1.2.16</version>
+		</dependency>
+<!-- 		<dependency>
+			<groupId>net.spy</groupId>
+			<artifactId>spymemcached</artifactId>
+			<version>2.11.2</version>
+		</dependency> -->
+  </dependencies>
+  
+  <build>
 <pluginManagement> 
       <plugins> 
         <plugin> 
