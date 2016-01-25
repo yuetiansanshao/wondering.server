@@ -39,7 +39,12 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>4.2.4.Final</version>
 		</dependency>
-
+		<!-- 配置二级缓存需要的依赖 -->
+		<dependency>
+		<artifactId>hibernate-ehcache</artifactId>
+		<groupId>org.hibernate</groupId>
+		<version>4.2.4.Final</version>
+		</dependency>
       <dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
@@ -112,4 +117,18 @@
     </plugins>
   </build>
   
+      <repositories>
+        <repository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
 </project>

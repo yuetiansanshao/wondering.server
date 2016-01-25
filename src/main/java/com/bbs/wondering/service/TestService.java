@@ -7,6 +7,7 @@ public class TestService {
 	
 	public String test(){
 		String hql = "select * from User";
-		Query query = session.createQuery(hql);
+	//Query query = session.createQuery(hql);
+		return hql;
 	}
 }

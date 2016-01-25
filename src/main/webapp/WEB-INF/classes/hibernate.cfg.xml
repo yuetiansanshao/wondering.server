@@ -20,7 +20,14 @@
 		<property name="connection.username">root</property> 
 		<!-- 数据库密码--> 
 		<property name="connection.password">199021</property> 
+		
+		<!-- 启动缓存 -->
+		<property name="cache.use_second_level_cache">true</property>
+		<property name="cache.use_query_cache">true</property>
+		<!-- 确定缓存方式 ：hibernate4和hibernate3配置不一样，hibernate4是 -->
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
 		<!-- 映射文件  -->
+		<mapping resource="com/bbs/wondering/model/mysql/user.hbm.xml"/>
 <!-- 		<mapping resource="com/amigo/pojo/User.hbm.xml"/> 
 		<mapping resource="com/amigo/pojo/Org.hbm.xml"/>  -->
 		</session-factory> 

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<hibernate-mapping package="com.bbs.wondering">
+<hibernate-mapping package="com.bbs.wondering.model">
 	<class name="User" table="bbs_user">
-		<cache usage="read-write"/>
+	 	<cache usage="read-write"/> 
 		<id name="id" column="ID" type="long">
 			<generator class="identity"></generator>
 		</id>
 		<!-- mysql中不用sequence 可以用auto_increment; -->
-		<property name="name" column="NAME" type="String"></property>
-		<property name="password" column="PASSWORD" type="String"></property>
-		<property name="email" column="EMAIL"></property>
+		<property name="name" column="NAME" type="java.lang.String"></property>
+		<property name="password" column="PASSWORD" type="java.lang.String"></property>
+		<property name="email" column="EMAIL" type="java.lang.String"></property>
 	</class>
 </hibernate-mapping>
