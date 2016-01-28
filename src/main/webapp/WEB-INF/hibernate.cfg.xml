@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE hibernate-configuration PUBLIC  
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"> 
+<hibernate-configuration> 
+		<session-factory>
+		<!-- 1，数据库连接信息 -->
+		<property name="dialect"> org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		<!-- 2，其他配置 -->
+		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+		<!-- 启动缓存 -->
+		<property name="cache.use_second_level_cache">true</property>
+		<property name="cache.use_query_cache">true</property>
+		<!-- 确定缓存方式 ：hibernate4和hibernate3配置不一样，hibernate4是 -->
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+		<!-- 3，导入映射文件,我使用的的是hibernate的注解，如果你用到是配置文件 -->
+		<!-- <mapping resource="org/pk/ssh/model/User" /> 配置文件 -->
+		<mapping resource="com/bbs/wondering/model/mysql/user.hbm.xml"/>
+</session-factory>
+</hibernate-configuration> 

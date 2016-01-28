@@ -1,0 +1,4 @@
+jdbcUrl = jdbc:mysql://localhost:3306/wondering_bbs?characterEncoding=gb2312
+driverClass = com.mysql.jdbc.Driver
+user = root
+password = 199021
