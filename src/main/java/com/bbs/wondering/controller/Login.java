@@ -6,6 +6,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,8 +19,8 @@ import com.bbs.wondering.service.TestService;
 @Controller
 @RequestMapping("/main")
 public class Login {
-	//@Resource
-	private TestService testService = new TestService();
+	@Resource
+	private TestService testService;
 	
 	@RequestMapping("/login.html")
 	public String login(HttpServletRequest re){

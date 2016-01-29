@@ -16,6 +16,6 @@
 		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
 		<!-- 3，导入映射文件,我使用的的是hibernate的注解，如果你用到是配置文件 -->
 		<!-- <mapping resource="org/pk/ssh/model/User" /> 配置文件 -->
-		<mapping resource="com/bbs/wondering/model/mysql/user.hbm.xml"/>
+	 	<mapping resource="com/bbs/wondering/model/mysql/user.hbm.xml"/> 
 </session-factory>
 </hibernate-configuration> 

@@ -17,6 +17,7 @@
 		http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 
 	<!-- 自动扫描与装配bean -->
+	 <!-- 包含annotation-config。spring可以自动去扫描base-pack下面或者子包下面的java文件，如果扫描到有@Component @Controller@Service等这些注解的类，则把这些类注册为bean-->
 	 <context:component-scan base-package="com.bbs.wondering"></context:component-scan>
 	 <!-- 导入外部的properties文件 -->
  	<context:property-placeholder location="/WEB-INF/mysql.properties"/>

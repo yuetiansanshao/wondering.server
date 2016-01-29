@@ -50,8 +50,13 @@
 			<artifactId>spring-orm</artifactId>
 			<version>4.2.4.RELEASE</version>
 		</dependency>
-		
-		
+	<!-- c3p0数据库	 -->
+	<dependency>
+		<groupId>c3p0</groupId>
+		<artifactId>c3p0</artifactId>
+		<version>0.9.1.2</version>
+	</dependency>
+	
 	<!-- mysql-jdbc -->
 		<dependency>
 			<groupId>mysql</groupId>
