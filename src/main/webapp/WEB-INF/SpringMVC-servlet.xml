@@ -15,6 +15,7 @@
 		<mvc:annotation-driven />
 		<!-- 扫描器已经有了上面这个mvc注解驱动的功能了，所有不需要了 -->
 		<context:component-scan base-package="com.bbs.wondering.controller" />
+		<mvc:resources location="/WEB-INF/widget/js/" mapping="/js/**"/>
 		<!-- 前缀+ viewName +后缀 -->
 		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 			<!-- webroot到某一指定的文件夹的路径 -->

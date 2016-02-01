@@ -10,19 +10,29 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>wondering bbs</title>
 <%-- <script type="text/javascript" src="<%=basePath %>/widget/js/jquery.js?ver=<%=ContextUtil.getVersion() %>"></script> --%>
-<script type="text/javascript" src="<%=basePath %>/widget/js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript">
+function test(){
+	
+	alert("js test sucesss~~");
+}
+
+</script>
 </head>
 <body>
 spring mvc test;
 <form action="/main/login.html" method="get">
 	<table>
 		<tr>
-			<td>账号</td>
+			<td>用户名：</td>
 			<td>
 				<input name="name" type="text"/>
 			</td>
 			<td>
 				<input  type="submit" value="testsubmit" />
+			</td>
+			<td>
+				<input  type="button" onclick="test();">
 			</td>
 		</tr>
 	</table>
