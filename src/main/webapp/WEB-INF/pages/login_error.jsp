@@ -1,11 +1,6 @@
+<%-- <%@page import="wondering.bbs.base.util.ContextUtil"%> --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%-- <%
-	 Cookie[] cookies = request.getCookies();
-	for(Cookie c : cookies){
-		System.out.println("cookie name :"+c.getName()+"cookie value:"+c.getValue());
-	} 
-%>     --%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -98,44 +93,13 @@ html,body {
 	font-size: 16px !important;
 }
 </style>
-<!-- <script type="text/javascript">
-function login(){
-	alert("111");
-	$("#login").submit();
-}
-
-function register(){
-	window.open("/main/register", "register");
-}
-</script> -->
 </head>
 <body>
 <h1 style="text-align:center">wondering 网站后台管理系统</h1>
-<!-- <form id="login" action="/main/login.html" method="post">
-	<table>
-		<tr>
-			<td>
-				用户名:<input name="name" type="text"/>
-			</td>
-		</tr>
-		<tr>	
-			<td>
-				密&nbsp;&nbsp;&nbsp;码:<input  type="password"  name="password"  />
-			</td>
-		</tr>
-		<tr>
-			<td>
-				登录<input  type="button" onclick="login();">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				注册:<input type="button" onclick="register()"/>
-			</td>
-		</tr>
-	</table>
-</form> -->
-
 <div class="box">
 		<div class="login-box">
 			<div class="login-title text-center">
-				<h1><small>登录</small></h1>
+				<h1><small style="color:red">用户名或者密码不正确</small></h1>
 			</div>
 			<div class="login-content ">
 			<div class="form">
@@ -152,7 +116,7 @@ function register(){
 					<div class="col-xs-12">
 						<div class="input-group">
 							<span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-							<input type="password" id="password" name="password" class="form-control" placeholder="密码">
+							<input type="text" id="password" name="password" class="form-control" pla ceholder="密码">
 						</div>
 					</div>
 				</div>
@@ -161,16 +125,6 @@ function register(){
 						<button  id="login" class="btn btn-sm btn-info"><span class="glyphicon glyphicon-off"></span> 登录</button>
 					</div>
 				</div>
-				<!-- <div class="form-group">
-					<div class="col-xs-6 link">
-						<p class="text-center remove-margin"><small>忘记密码？</small> <a href="javascript:void(0)" ><small>找回</small></a>
-						</p>
-					</div>
-					<div class="col-xs-6 link">
-						<p class="text-center remove-margin"><small>还没注册?</small> <a href="javascript:void(0)" ><small>注册</small></a>
-						</p>
-					</div>
-				</div> -->
 			</form>
 			</div>
 		</div>

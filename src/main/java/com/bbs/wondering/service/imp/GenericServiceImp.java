@@ -2,6 +2,7 @@ package com.bbs.wondering.service.imp;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -23,7 +24,13 @@ public class GenericServiceImp<T, PK extends Serializable> implements GenericSer
 
 		return genericDao.findAll(clazz);
 	}
-	
 
+	@Override
+	public List<T> findAllByParamters(Class<T> clazz, Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return genericDao.findAllByParamters(clazz,map);
+	}
+	
+	
 
 }

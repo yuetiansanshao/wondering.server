@@ -2,6 +2,7 @@ package com.bbs.wondering.dao.imp;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -45,4 +46,32 @@ public class GenericDaoImp<T, PK extends Serializable> extends HibernateDaoSuppo
 		});
 	}
 
+
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<T> findAllByParamters(final Class<T> clazz, final Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return ( List<T>)getHibernateTemplate().execute(new HibernateCallback<T>() {
+
+			@Override
+			public T doInHibernate(Session session) throws HibernateException {
+				// TODO Auto-generated method stub
+				String hql = "from "+clazz.getName()+" t";
+				Object[] keys = map.keySet().toArray();
+				for(int i=0;i<keys.length;i++){
+					if(i==0){
+						hql +=" where t."+keys[i]+" = '"+map.get(keys[i])+"'";		
+					}else{
+						hql +=" and t."+keys[i]+" = '"+map.get(keys[i])+"'";
+					}
+				}
+				Query query = session.createQuery(hql);
+				return (T)query.list();
+			}
+		});
+	}
+
+	
+	
 }
