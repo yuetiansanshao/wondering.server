@@ -1,5 +1,6 @@
 package com.bbs.wondering.controller;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,10 +38,10 @@ public class Login {
 			 * 如果不设置session属性会？
 			 * 如果设置session属性会？
 			 * */
-			session.setAttribute("user", username);
+		//	session.setAttribute("user", username);
 			/*向客户端发送cookie*/
-			Cookie cookie = new Cookie("username", username);
-			cookie.setMaxAge(60*60);
+			Cookie cookie = new Cookie("login", "true");
+			cookie.setMaxAge(60*15);
 			response.addCookie(cookie);
 			System.out.println("cookie name:"+cookie.getName()+"cookie value :"+cookie.getValue());
 			return "/back/welcome";

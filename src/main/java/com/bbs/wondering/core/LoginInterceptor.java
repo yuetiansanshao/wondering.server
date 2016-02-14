@@ -30,27 +30,41 @@ public class LoginInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest req, HttpServletResponse res,
 			Object object) throws Exception {
-		/*// TODO Auto-generated method stub
-		获取session属性
-		 * 如果没有设置属性会？
-		 * 如果是设置了session属性会？
-		 */ 
-		String url = req.getRequestURL().toString();
-		System.out.println(url);
-		HttpSession session = req.getSession();
-		Cookie[] cookies = req.getCookies();
-		boolean isExit = false;
-		for(Cookie c : cookies){
-			if("username".equals(c.getName())){
-				session.setAttribute("user",c.getName());
-				isExit = true;
+			/*// TODO Auto-generated method stub
+			获取session属性
+			 * 如果没有设置属性会？
+			 * 如果是设置了session属性会？
+			 */ 
+			String url = req.getRequestURL().toString();
+			System.out.println(url);
+			HttpSession session = req.getSession();
+			Cookie[] cookies = req.getCookies();
+			boolean isExit = false;
+			if(cookies!=null){
+				for(Cookie c : cookies){
+					if("login".equals("true")){
+					//	session.setAttribute("user",c.getName());
+						isExit = true;
+					}
+				}
 			}
-		} 
-		if(!isExit){
-			//重定向
-			req.getRequestDispatcher(LOGIN_URL).forward(req, res);	
+			System.out.println("prehandle");
+			if(!isExit){
+/*				if(url.endsWith("login.html")){
+					return true;
+				}*/
+				//重定向地址栏不会变
+				//req.getRequestDispatcher(LOGIN_URL).forward(req, res);	
+				//重定向地址栏会变
+				res.sendRedirect(LOGIN_URL);
+				return false;
+			}else{
+				if(url.endsWith("login.html")){
+					req.getRequestDispatcher("/pages/back/welcome.jsp").forward(req, res);
+					return false;
+				}else{
+					return true;
+				}
+			}
 		}
-		System.out.println("prehandle");
-		return true;
-	}
 }

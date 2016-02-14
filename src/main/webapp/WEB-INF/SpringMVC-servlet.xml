@@ -37,7 +37,7 @@
 			 	<bean class="com.bbs.wondering.core.LoginInterceptor" />
 			</mvc:interceptor> 	
  		</mvc:interceptors>
- 		<!-- 怎样不将error抛出在浏览器中 -->
+ 		<!-- 怎样不将error抛出在浏览器中 :在web.xml中配置errorpage-->
 </beans>
 
 
