@@ -42,7 +42,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 			boolean isExit = false;
 			if(cookies!=null){
 				for(Cookie c : cookies){
-					if("login".equals("true")){
+					if("true".equals(c.getValue())){
 					//	session.setAttribute("user",c.getName());
 						isExit = true;
 					}
@@ -50,9 +50,9 @@ public class LoginInterceptor implements HandlerInterceptor {
 			}
 			System.out.println("prehandle");
 			if(!isExit){
-/*				if(url.endsWith("login.html")){
+				if(url.endsWith("login.html")){
 					return true;
-				}*/
+				}
 				//重定向地址栏不会变
 				//req.getRequestDispatcher(LOGIN_URL).forward(req, res);	
 				//重定向地址栏会变
@@ -60,7 +60,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 				return false;
 			}else{
 				if(url.endsWith("login.html")){
-					req.getRequestDispatcher("/pages/back/welcome.jsp").forward(req, res);
+					req.getRequestDispatcher("/WEB-INF/pages/back/welcome.jsp").forward(req, res);
 					return false;
 				}else{
 					return true;

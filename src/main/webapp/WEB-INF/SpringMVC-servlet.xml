@@ -31,6 +31,7 @@
 			 <!-- 设置单个拦截器以及拦截类型 --> 
 			 <mvc:interceptor>
 			 <!-- 设置拦截规则：除了登录界面都拦截 -->
+			 	<mvc:mapping path=""/>
 			 	<mvc:mapping path="/*.html"/>
 			 	<mvc:mapping path="/*/*.html"/>
 			 	<!--该标签还未明确意图 <mvc:exclude-mapping path="/main/login.html"/> -->
