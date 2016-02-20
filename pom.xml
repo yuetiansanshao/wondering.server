@@ -91,6 +91,30 @@
 		  <artifactId>log4j</artifactId>
 		  <version>1.2.16</version>
 		</dependency>
+		<!-- 为了看servlet源码 -->
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+			<version>7.0</version>
+		</dependency>
+			<!-- jackson -->
+<!-- 		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.7.1</version>
+		</dependency> -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.7.1-1</version>
+		</dependency>
+		
+		
 <!-- 		<dependency>
 			<groupId>net.spy</groupId>
 			<artifactId>spymemcached</artifactId>

@@ -12,11 +12,14 @@
            http://www.springframework.org/schema/mvc     
            http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd"> 
            <!-- mvc注解驱动 -->
+           <!-- 这个注解驱动果然强大后面在使用json的时候完全不用写下面的标签直接在pom文件中导入响应的jar包即可 -->
 		<mvc:annotation-driven />
 		<!-- 扫描器已经有了上面这个mvc注解驱动的功能了，所有不需要了 -->
 		<context:component-scan base-package="com.bbs.wondering.controller" />
 		<mvc:resources location="/WEB-INF/widget/js/" mapping="/js/**"/>
 		<mvc:resources location="/WEB-INF/widget/bootstrap/" mapping="/bootstrap/**"/>
+		<mvc:resources location="/WEB-INF/widget/css/" mapping="/css/**"/>
+		<mvc:resources location="/WEB-INF/widget/images/" mapping="/images/**"/>
 		<!-- 前缀+ viewName +后缀 -->
 		<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 			<!-- webroot到某一指定的文件夹的路径 -->
@@ -39,6 +42,24 @@
 			</mvc:interceptor> 	
  		</mvc:interceptors>
  		<!-- 怎样不将error抛出在浏览器中 :在web.xml中配置errorpage-->
+ 		
+ 		<!-- <bean id="stringConverter" class="org.springframework.http.converter.StringHttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/plain;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+ 		输出对象转JSON支持
+	    <bean id="jsonConverter"  class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>
+	    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+	        <property name="messageConverters">
+	            <list>
+	                <ref bean="stringConverter"/>
+	                <ref bean="jsonConverter" />
+	            </list>
+	        </property>
+	    </bean> -->
 </beans>
 
 

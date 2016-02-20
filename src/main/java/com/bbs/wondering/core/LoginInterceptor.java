@@ -37,7 +37,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 			 */ 
 			String url = req.getRequestURL().toString();
 			System.out.println(url);
-			HttpSession session = req.getSession();
+			//HttpSession session = req.getSession();
 			Cookie[] cookies = req.getCookies();
 			boolean isExit = false;
 			if(cookies!=null){

@@ -28,7 +28,5 @@
 		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
 		<!-- 映射文件  -->
 		<mapping resource="com/bbs/wondering/model/mysql/user.hbm.xml"/>
-<!-- 		<mapping resource="com/amigo/pojo/User.hbm.xml"/> 
-		<mapping resource="com/amigo/pojo/Org.hbm.xml"/>  -->
 		</session-factory> 
 </hibernate-configuration> 

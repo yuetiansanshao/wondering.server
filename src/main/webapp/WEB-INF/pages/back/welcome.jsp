@@ -11,6 +11,13 @@
 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script type="text/javascript" src="/js/jquery-1.12.0.min.js"></script>
 <script type="text/javascrpit" src="/bootstrap/js/bootstrap.min.js"></script> -->
+<script type="text/javascript">
+	function testjson(){
+		$.post("/test/json",function(result){
+			alert(result.name);
+		});
+	}
+</script>
 </head>
 <body>
 <h3>wondering 后台管理系统</h3>
@@ -33,6 +40,7 @@
 		         <li><a href="#">数据库字典</a></li>
 	     	 </ul>
   		 </li>
+  		 <li><input type="button" onclick="testjson()"/></li>
       </ul>
    </div>
 </nav>

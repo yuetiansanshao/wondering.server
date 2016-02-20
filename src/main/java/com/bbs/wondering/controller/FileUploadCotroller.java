@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping("/main")
 public class FileUploadCotroller {
 
+
     @RequestMapping(value="/upload", method=RequestMethod.GET)
     public @ResponseBody String provideUploadInfo() {
         return "You can upload a file by posting to this same URL.";
