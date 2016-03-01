@@ -3,6 +3,7 @@ package com.bbs.wondering.controller;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.UnsupportedEncodingException;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -26,9 +27,12 @@ public class FileUploadCotroller {
     }
 
     @RequestMapping(value="/upload", method=RequestMethod.POST)
-    public @ResponseBody String handleFileUpload(HttpServletRequest request/*,
-            @RequestParam(value="fileupload",required = false) MultipartFile file*/){
+    public @ResponseBody String handleFileUpload(HttpServletRequest request) throws UnsupportedEncodingException{
+    	request.setCharacterEncoding("utf-8");
+    	System.out.println(request.getCharacterEncoding());
     	 MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+    	 System.out.println(multipartRequest.getCharacterEncoding());
+    	 multipartRequest.setCharacterEncoding("UTF-8");
          MultipartFile file = multipartRequest.getFile("Filedata");
          String name= file.getOriginalFilename();
         if (!file.isEmpty()) {
