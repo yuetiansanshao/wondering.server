@@ -1097,7 +1097,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: white;
   text-decoration: none;
 }
 a:hover,
@@ -4063,12 +4063,16 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a > img {
   max-width: none;
 }
+/* 实现float:left 后li居中 */
 .nav-tabs {
-  border-bottom: 1px solid #ddd;
+  float:left;
+  position:relative;
+  left:50%;
 }
 .nav-tabs > li {
-  float: left;
-  margin-bottom: -1px;
+	position:relative;
+	right:50%;
+	float:left;
 }
 .nav-tabs > li > a {
   margin-right: 2px;
